@@ -13,9 +13,24 @@ class ZipCodes extends Migration
      */
     public function up()
     {
-        Schema::create('zip_codes', function (Blueprint $table) {
+        Schema::create('codes_zip', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->timestamps();
+            $table->string('d_codigo',10)->nullable();
+            $table->string('d_asenta',50)->nullable();
+            $table->string('d_tipo_asenta',50)->nullable();
+            $table->string('D_mnpio',80)->nullable();
+            $table->string('d_estado',80)->nullable();
+            $table->string('d_ciudad',80)->nullable();
+            $table->string('d_CP',20)->nullable();
+            $table->string('c_estado',20)->nullable();
+            $table->string('c_oficina',20)->nullable();
+            $table->string('c_CP',20)->nullable();
+            $table->string('c_tipo_asenta',80)->nullable();
+            $table->string('c_mnpio',80)->nullable();
+            $table->string('id_asenta_cpcons',30)->nullable();
+            $table->string('d_zona',80)->nullable();
+            $table->string('c_cve_ciudad',80)->nullable();
         });
     }
 
@@ -26,6 +41,6 @@ class ZipCodes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zip_codes');
+        Schema::dropIfExists('codes_zip');
     }
 }

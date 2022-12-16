@@ -24,9 +24,10 @@ Stable: v0.1
         sudo chown -R $USER:www-data bootstrap/cache;
         chmod -R 775 bootstrap/cache;
 	    ```
-	5. Import database from `database/updates/*.sql`  DB
-        with `root` user, at `localhost` host, `33063` port.	
-	6. Run `composer install`.
+	5. Run `composer install`.
+	6. Run `php artisan migrate`.
+	7. Import database from `database/updates/*.sql`  DB.	
+	8. Set APP_KEY=base64:Z/P5j1VV/3peijg/WLWTEz5rU6JHcUdeb0RiIV8Tp/0= at .env or Run `php artisan key:generate`.
 
 
 
