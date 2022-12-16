@@ -47,14 +47,14 @@ class ZipCodeController extends Controller
                 $municipality_key = ltrim($item->c_mnpio, '0');
                 $municipality_name = strtoupper($item->D_mnpio);
             }
-            $settle["key"] = intval(ltrim($item->id_asenta_cpcons, '0'));
-            $settle["name"] = strtoupper($item->d_asenta);
-            $settle["zone_type"] = strtoupper($item->d_zona);
-            $settle["settlement_type"]["name"] = $item->d_tipo_asenta;
+            $settle["key"] = $item->id_asenta_cpcons ? intval(ltrim($item->id_asenta_cpcons, '0')) : null;
+            $settle["name"] = $item->d_asenta ? strtoupper($item->d_asenta) : null;
+            $settle["zone_type"] = $item->d_zona ? strtoupper($item->d_zona) : null;
+            $settle["settlement_type"]["name"] = $item->d_tipo_asenta ? $item->d_tipo_asenta : null;
             array_push($settlements, $settle);
             $iterador++;
         }
-        $data["zip_code"] = $zip_code ? intval($zip_code) : null;
+        $data["zip_code"] = $zip_code ? $zip_code : null;
         $data["locality"] = $locality ? $locality : null;
         $data["federal_entity"]["key"] = $federal_entity_key ? intval($federal_entity_key) : null;
         $data["federal_entity"]["name"] = $federal_entity_name ? $federal_entity_name : null;
