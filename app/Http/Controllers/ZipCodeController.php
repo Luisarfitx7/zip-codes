@@ -47,20 +47,20 @@ class ZipCodeController extends Controller
                 $municipality_key = ltrim($item->c_mnpio, '0');
                 $municipality_name = strtoupper($item->D_mnpio);
             }
-            $settle["key"] = ltrim($item->id_asenta_cpcons, '0');
+            $settle["key"] = intval(ltrim($item->id_asenta_cpcons, '0'));
             $settle["name"] = strtoupper($item->d_asenta);
             $settle["zone_type"] = strtoupper($item->d_zona);
             $settle["settlement_type"]["name"] = $item->d_tipo_asenta;
             array_push($settlements, $settle);
             $iterador++;
         }
-        $data["zip_code"] = $zip_code ? $zip_code : null;
+        $data["zip_code"] = $zip_code ? intval($zip_code) : null;
         $data["locality"] = $locality ? $locality : null;
-        $data["federal_entity"]["key"] = $federal_entity_key ? $federal_entity_key : null;
+        $data["federal_entity"]["key"] = $federal_entity_key ? intval($federal_entity_key) : null;
         $data["federal_entity"]["name"] = $federal_entity_name ? $federal_entity_name : null;
         $data["federal_entity"]["code"] = $federal_entity_code ? $federal_entity_code : null;
         $data["settlements"] = $settlements ? $settlements : null;
-        $data["municipality"]["key"] = $municipality_key ? $municipality_key : null;
+        $data["municipality"]["key"] = $municipality_key ? intval($municipality_key) : null;
         $data["municipality"]["name"] = $municipality_name ? $municipality_name : null;
         return $data;
     }
