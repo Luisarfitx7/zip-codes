@@ -1,24 +1,43 @@
-# Lumen PHP Framework
+# tepe codes
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+Stable: v0.1
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
-## Contributing
+	
+### SET UP
+* Requirements (Already covered with Docker deployment)
+	1. Apache/2.4.27 or greater.
+	2. MySQL 5.7 or greater.
+	3. PHP/7.2.24 or greater.
+  
+* App Configuration
+    1. Add host `tepe.localhost`,
+        	see [Edit hosts](https://dinahosting.com/ayuda/como-modificar-el-fichero-hosts).        	
+    2. Create `.env` file from `example.env` and set it.
+	3. Set `db` instead `localhost` in `.env` while using Docker.
+	4. Give Folder permissions:	
+	    ```
+	    sudo chown -R $USER:www-data storage;
+        chmod -R 775 storage;
+        sudo chown -R $USER:www-data bootstrap/cache;
+        chmod -R 775 bootstrap/cache;
+	    ```
+	5. Import database from `database/updates/*.sql`  DB
+        with `root` user, at `localhost` host, `33063` port.	
+	6. Run `composer install`.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### CONTRIBUTION: Guidelines & Documentation
 
-## License
+* Git :
+    [Gitflow](http://nvie.com/posts/a-successful-git-branching-model).
+* Deploy: 
+    [Docker Compose](https://docs.docker.com/compose/reference/up)
+* Back End:
+    [Laravel Lumen]
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2022 [Lum Labs]
+
