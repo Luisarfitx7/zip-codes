@@ -56,10 +56,10 @@ class ZipCodeController extends Controller
         }
         $data["zip_code"] = $zip_code ? $zip_code : null;
         $data["locality"] = $locality ? $locality : null;
-        $data["settlements"] = $settlements ? $settlements : null;
         $data["federal_entity"]["key"] = $federal_entity_key ? $federal_entity_key : null;
         $data["federal_entity"]["name"] = $federal_entity_name ? $federal_entity_name : null;
         $data["federal_entity"]["code"] = $federal_entity_code ? $federal_entity_code : null;
+        $data["settlements"] = $settlements ? $settlements : null;
         $data["municipality"]["key"] = $municipality_key ? $municipality_key : null;
         $data["municipality"]["name"] = $municipality_name ? $municipality_name : null;
         return $data;
